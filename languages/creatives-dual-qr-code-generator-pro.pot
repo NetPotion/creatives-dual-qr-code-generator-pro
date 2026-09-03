@@ -1,0 +1,764 @@
+# Copyright (C) 2026 MidState Design
+# This file is distributed under the GPL-2.0+ license.
+msgid ""
+msgstr ""
+"Project-Id-Version: Creatives Dual QR Code Generator Pro\n"
+"Report-Msgid-Bugs-To: https://midstatedesign.com/\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-03T00:00:00+00:00\n"
+"X-Domain: creatives-dual-qr-code-generator-pro\n"
+
+#: creatives-dual-qr-code-generator-pro.php:1011
+msgid "Shown inside the expandable panel. Clear this and the panel disappears, along with the requirement that visitors open it before agreeing. Saved through the same filter WordPress uses for post content."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1028
+msgid "per"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1038
+#. translators: 1: the {limit} placeholder, 2: the {window} placeholder, both shown literally.
+msgid "Counted per visitor IP over a rolling window, not a calendar day. The %1$s and %2$s placeholders in the terms text follow whatever is set here."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1059
+msgid "This site sits behind Cloudflare"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1061
+msgid "Only tick this if it is true."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1061
+msgid "It tells the rate limiter to read the visitor IP from the CF-Connecting-IP header instead of the connecting address. Behind Cloudflare without it, every visitor shares a handful of proxy addresses and they lock each other out. Not behind Cloudflare with it, anyone can send that header themselves and sidestep the limit entirely."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:110
+msgid "Cloudflare Turnstile Configuration"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1137
+msgid "Small"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1138
+msgid "Most conservative; use for very long URLs."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1141
+msgid "Medium"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1142
+msgid "Recommended. Comfortable margin on every code tested."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1145
+msgid "Large"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1146
+msgid "Top of the measured-safe range. Always test-scan before printing."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1161
+msgid "The logo is scaled to fill its space after any empty margin baked into the image file is trimmed off, and the white plate is shaped to the logo, so tall or wide marks are not shrunk to fit a square."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:117
+msgid "CAPTCHA"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1175 includes/class-creatives-dqrcgp-admin-tool.php:188
+msgid "No logo"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1176
+msgid "Generated QR codes stay plain."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1179
+msgid "Always use the site logo"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1180
+msgid "Every QR code generated from the shortcode carries the logo set below. Visitors cannot upload their own."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1183
+msgid "Let visitors upload their own logo"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1184
+msgid "Adds an optional file field to the frontend form. Visitor uploads are validated, used to draw the code, and discarded &mdash; nothing is written to the media library or the uploads folder. If a visitor supplies no logo, the site logo below is used when one is set."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1217 creatives-dual-qr-code-generator-pro.php:1271
+msgid "Change Logo"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1217 creatives-dual-qr-code-generator-pro.php:1272
+msgid "Select Logo"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1218
+msgid "Remove"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1220
+msgid "Square PNG, JPG, or WebP. A favicon or a simple mark reads best. At the Medium size it is drawn at roughly one fifth of the code's width on a white plate, so fine detail and thin text will not survive. 2 MB max."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:125
+msgid "Turnstile Site Key"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1269
+msgid "Select QR Center Logo"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1270 includes/class-creatives-dqrcgp-admin-tool.php:101
+msgid "Use this logo"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1310 creatives-dual-qr-code-generator-pro.php:1324 includes/class-creatives-dqrcgp-admin-tool.php:154
+msgid "QR Code Generator"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1311
+msgid "Dual QR Code Generator"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1325 creatives-dual-qr-code-generator-pro.php:1371 creatives-dual-qr-code-generator-pro.php:1406
+#. translators: %s: link to the admin generator screen, labelled "Generate".
+msgid "Generate"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1333 creatives-dual-qr-code-generator-pro.php:1361
+msgid "Creatives Dual QR Code Generator Pro"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1334 creatives-dual-qr-code-generator-pro.php:1407
+msgid "Settings"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1357
+msgid "Unauthorized"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1370
+#. translators: %s: link to the admin generator screen, labelled "Generate".
+msgid "These settings control the public form only. To make a code yourself, go to %s."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1379
+#. translators: %s: the shortcode, shown literally.
+msgid "Add the shortcode %s to any page to show the public generator."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1431
+msgid "Another Creatives QR Code Generator plugin is also active. They will not conflict, but you likely only need one — consider deactivating the one you are not using."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:145
+msgid "Turnstile Secret Key"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:1523
+msgid "Creatives Dual QR Code Generator Pro found settings from an earlier install and carried them forward."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:181
+msgid "Center Logo"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:183
+msgid "Place a small square logo in the middle of generated QR codes. Codes with a logo are encoded at the highest error-correction level (H, 30% recoverable) so the covered area does not affect scanning."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:188
+msgid "Unavailable on this server."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:189
+msgid "The PHP GD image library is not installed, so logos cannot be composited. Ask your host to enable the gd extension."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:198
+msgid "Logo Mode"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:206
+msgid "Site Logo"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:214
+msgid "Logo Size"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:259 includes/class-creatives-dqrcgp-frontend-tool.php:189
+msgid "Terms of Use"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:261
+msgid "The public form can show a Terms of Use block that visitors must expand and accept before a code is generated. The fields below start out holding the wording that ships with the plugin; edit it, or clear a field to drop that part."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:264
+msgid "Three placeholders are replaced when the block is displayed:"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:265
+msgid "and"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:266
+msgid "Using them keeps the terms in step with the settings above and below."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:274
+msgid "Show Terms of Use"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:282
+msgid "Company Name"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:290
+msgid "Opening Text"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:298
+msgid "Full Terms"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:316
+msgid "Public Form Display"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:333
+msgid "Footer Note"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:341
+msgid "Your Own Text"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:377
+msgid "Rate Limiting"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:379
+msgid "Applies to the public shortcode form only. The admin generator is not rate limited."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:386
+msgid "Codes Per Visitor"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:394
+msgid "Visitor IP Source"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:453
+msgid "Questions about this tool? Email hello@example.com"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:455
+msgid "Replaces the plugin credit with your own wording. Links and basic formatting are allowed. Leave it empty to show the plugin credit instead."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:459
+#. translators: %s: the {company} placeholder, shown literally.
+msgid "The %s placeholder works here too."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:479
+msgid "Show a note at the foot of the public form"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:481
+msgid "Ticked shows a MidState Design credit, unless you fill in your own text below. Unticked, the foot of the form is empty."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:608
+msgid "Get free API keys:"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:610
+msgid "Cloudflare Dashboard"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:614
+msgid "Use your own Turnstile keys. They are free, and a widget is tied to the hostnames you list in the Cloudflare dashboard, so keys from another site will not work on yours."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:630
+msgid "Require a Turnstile CAPTCHA on the public form"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:632
+msgid "Recommended. The public form is unauthenticated, and the CAPTCHA is the only check an attacker cannot simply script past. Rate limiting keys on IP, which a rotating proxy walks straight through."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:637
+msgid "CAPTCHA is off."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:638
+msgid "Anyone can generate codes on this site as fast as the rate limit allows, from as many addresses as they control. Consider a tighter per-visitor limit below."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:643
+msgid "Keys missing."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:644
+msgid "Both keys are needed before the CAPTCHA can run. Until they are set, the public form works without it."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:65
+msgid "Crafted and offered by"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:67
+msgid "MidState Design"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:674
+msgid "Public by design. It appears in the page source wherever the form is shown."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:68
+msgid "with abiding love & respect for creatives, entrepreneurs, and small businesses alike."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:701
+msgid "Saved. Type a new key to replace it."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:701
+msgid "Not set"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:705
+msgid "Remove the saved secret key"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:711
+msgid "A key is saved. It is never shown again; leave this blank to keep it."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:712
+msgid "Kept in the database and never printed back to the screen."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:946
+msgid "Require visitors to accept the Terms of Use before generating a code"
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:948
+msgid "Turn this off and the public form drops the terms block, the agreement checkbox and the matching server-side check. Rate limiting and the CAPTCHA are unaffected."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:967
+#. translators: %s: the {company} placeholder, shown literally.
+msgid "Replaces %s throughout the terms. Empty uses the site title."
+msgstr ""
+
+#: creatives-dual-qr-code-generator-pro.php:986
+msgid "Always visible, above the expandable panel. Clear it to show nothing there."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:100
+msgid "Select center logo"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:106
+#. translators: %s: maximum size in megabytes.
+msgid "That logo is larger than %s MB. Choose a smaller file."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:109 includes/class-creatives-dqrcgp-frontend-tool.php:278
+msgid "Logo must be a PNG, JPG, or WebP image."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:110
+msgid "Enter a URL first."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:111
+msgid "Generation failed. Try again."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:112
+msgid "Network error. Try again."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:113
+msgid "Your QR code"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:114
+msgid "Generated QR code"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:115 includes/class-creatives-dqrcgp-frontend-tool.php:292
+msgid "Download PNG"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:116 includes/class-creatives-dqrcgp-frontend-tool.php:293
+msgid "Download SVG"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:144
+msgid "You do not have permission to use the QR generator."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:156
+msgid "Enter a web address, add a logo if you want one, then download your code as a PNG or SVG."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:161
+msgid "The PHP GD image library is not installed on this server, so center logos are unavailable. Plain codes still work."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:171
+msgid "URL or address"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:176
+msgid "http, https, mailto and tel addresses are accepted."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:183 includes/class-creatives-dqrcgp-frontend-tool.php:164
+msgid "Center logo"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:192
+msgid "Choose from the media library"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:196
+msgid "Upload a file for this code only"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:206
+msgid "Change image"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:206
+msgid "Select image"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:209
+msgid "Starts on the site logo set in Settings. Pick a different image for a one-off code."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:222
+#. translators: %s: comma-separated list of accepted image formats.
+msgid "%s, 2 MB max. The file is used to draw this code and is not saved to the media library."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:232
+msgid "Logo size"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:237
+msgid "Small — most conservative; use for very long URLs."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:238
+msgid "Medium — recommended. Comfortable margin on every code tested."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:239
+msgid "Large — top of the measured-safe range. Test-scan before printing."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:257 includes/class-creatives-dqrcgp-frontend-tool.php:213 includes/class-creatives-dqrcgp-frontend-tool.php:288
+msgid "Generate QR Code"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:280
+msgid "Security check failed. Reload the page and try again."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:285
+msgid "You do not have permission to generate QR codes."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:290 includes/class-creatives-dqrcgp-admin-tool.php:297
+msgid "A URL is required."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:316
+#. translators: %s: comma-separated list of accepted URL schemes.
+msgid "Include a scheme this tool accepts: %s."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:383
+msgid "Enter a valid email address, for example mailto:hello@example.com."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:393
+msgid "Enter a valid phone number, for example tel:+13205551234."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:402
+msgid "That does not look like a valid address."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:428 includes/class-creatives-dqrcgp-logo.php:253
+msgid "This server cannot add a logo to QR codes (the GD image library is unavailable)."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:437 includes/class-creatives-dqrcgp-admin-tool.php:443
+msgid "Choose a logo file, or switch the logo option to \"No logo\"."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:465
+msgid "Select an image from the media library, or switch the logo option to \"No logo\"."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:469
+msgid "That media item is not an image."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:475
+msgid "The selected image file is missing from the server."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:566 includes/class-creatives-dqrcgp-frontend-tool.php:764
+msgid "QR generator class not found."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-admin-tool.php:578
+msgid "That address could not be encoded as a QR code (it may be too long)."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:137
+msgid "Visible to administrators only:"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:138
+msgid "the Turnstile CAPTCHA is switched on but its keys are missing, so the form below is running without it."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:159
+msgid "Enter URL:"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:160
+msgid "https://example.com"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:164
+msgid "(optional)"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:170
+#. translators: 1: accepted image formats, 2: maximum size in megabytes.
+msgid "A square logo or favicon works best. %1$s, %2$s MB max. Your file is used to draw the code and is not stored on this site."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:178
+msgid "Remove logo"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:194
+#. translators: %s: company or site name.
+msgid "By accessing or using the %s QR Code Generator, you agree to these Terms of Use."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:202
+msgid "Read the rest of the Terms of Use"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:208
+msgid "I agree to the Terms of Use above."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:275
+#. translators: %s: maximum size in megabytes.
+msgid "That logo is larger than %s MB. Please choose a smaller file."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:279
+msgid "Selected logo preview"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:280
+msgid "Please enter a valid URL (e.g., https://example.com)"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:281 includes/class-creatives-dqrcgp-frontend-tool.php:321
+msgid "Please expand and review the full Terms of Use before continuing."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:282
+msgid "Please agree to the Terms of Use to generate a QR code."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:283
+msgid "CAPTCHA not loaded. Please refresh and try again."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:284
+msgid "Please complete the CAPTCHA verification."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:285
+msgid "An error occurred. Please try again."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:286
+msgid "Network error. Please try again."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:287
+msgid "Generating..."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:289
+msgid "QR Code Generated"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:290
+msgid "URL: "
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:291
+msgid "Generated QR Code"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:294
+msgid "Generate another QR code"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:307
+msgid "Security check failed."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:313
+msgid "You must agree to the Terms of Use to generate a QR code."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:327
+msgid "URL is required."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:334
+msgid "Invalid URL format."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:339
+msgid "URLs pointing to internal networks are not allowed."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:354
+msgid "CAPTCHA token missing."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:577
+msgid "Unable to determine client IP."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:590
+#. translators: 1: number of codes allowed, 2: window label such as "day".
+msgid "Rate limit exceeded. Maximum %1$s per %2$s."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:694
+msgid "Turnstile secret not configured."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:718
+#. translators: %s: error text returned by the HTTP request.
+msgid "CAPTCHA request failed: %s"
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:730
+#. translators: %s: HTTP status code.
+msgid "CAPTCHA service returned an unexpected response (HTTP %s)."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:746
+#. translators: %s: error codes returned by Turnstile.
+msgid "CAPTCHA validation failed (%s)."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-frontend-tool.php:774
+msgid "Failed to generate QR code."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:200
+msgid "No logo file was received."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:206
+msgid "Please choose a single logo image."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:214
+#. translators: %d: maximum upload size in megabytes.
+msgid "That logo is larger than the server allows. Please use a file under %d MB."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:221
+msgid "The logo upload did not complete. Please try again."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:225
+msgid "The logo upload could not be verified."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:233 includes/class-creatives-dqrcgp-logo.php:265
+#. translators: %d: maximum upload size in megabytes.
+msgid "Logo file must be %d MB or smaller."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:257 includes/class-creatives-dqrcgp-logo.php:328
+msgid "The logo image could not be read."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:278
+msgid "That file is not a readable image."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:289
+#. translators: %s: comma-separated list of accepted image formats.
+msgid "Logo must be one of: %s."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:300
+#. translators: 1: image width, 2: image height, 3: maximum pixels per side.
+msgid "That image is %1$d x %2$d pixels, which is beyond what this tool can process. Please use an image no larger than %3$d pixels on a side."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:316
+#. translators: 1: image width, 2: image height, 3: image size in megapixels, 4: megapixels that would fit.
+msgid "That image is %1$d x %2$d pixels (%3$s megapixels), which is more than this server has memory to process. Please resize it to about %4$s megapixels or less and try again."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:342
+msgid "That image could not be decoded. Try re-saving it as a PNG."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:752
+msgid "The logo image has no usable dimensions."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:790
+msgid "This QR code is too small to carry a center logo."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:800
+msgid "There is not enough room in this QR code for a logo."
+msgstr ""
+
+#: includes/class-creatives-dqrcgp-logo.php:806
+msgid "Could not build the logo backing plate."
+msgstr ""

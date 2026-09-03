@@ -1,0 +1,141 @@
+/**
+ * Admin QR generator screen.
+ *
+ * @package Creatives_Dual_QR_Code_Generator_Pro
+ */
+
+/* The hidden attribute is styled by the UA sheet, so any author rule that
+   sets display on these elements wins over it. Pin it for this screen. */
+.creatives-qr-admin [hidden] {
+	display: none !important;
+}
+
+.creatives-qr-admin-lead {
+	max-width: 46em;
+}
+
+.creatives-qr-admin-layout {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px;
+	align-items: flex-start;
+}
+
+.creatives-qr-admin-form {
+	flex: 1 1 480px;
+	min-width: 320px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 0 20px 8px;
+}
+
+.creatives-qr-admin-output {
+	flex: 0 1 340px;
+	min-width: 280px;
+}
+
+.creatives-qr-admin-fieldset .creatives-qr-admin-radio {
+	display: block;
+	margin-bottom: 8px;
+}
+
+.creatives-qr-admin-logo-panel {
+	margin-top: 12px;
+	padding: 12px;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+}
+
+.creatives-qr-admin-logo-preview {
+	margin-bottom: 10px;
+}
+
+.creatives-qr-admin-logo-preview img {
+	max-width: 120px;
+	max-height: 120px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	padding: 6px;
+}
+
+.creatives-qr-admin-error {
+	margin: 0 0 16px;
+}
+
+.creatives-qr-admin-card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 16px;
+	text-align: center;
+}
+
+.creatives-qr-admin-card h2 {
+	margin-top: 0;
+}
+
+.creatives-qr-admin-encoded {
+	word-break: break-all;
+	color: #50575e;
+	margin-top: 0;
+}
+
+.creatives-qr-admin-image {
+	display: block;
+	width: 100%;
+	max-width: 260px;
+	height: auto;
+	margin: 0 auto 16px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	padding: 8px;
+}
+
+.creatives-qr-admin-actions a {
+	margin: 0 4px;
+}
+
+#creatives-qr-admin-spinner {
+	float: none;
+	margin-top: 0;
+	vertical-align: middle;
+	visibility: hidden;
+}
+
+#creatives-qr-admin-spinner.is-active {
+	visibility: visible;
+}
+
+@media screen and (max-width: 782px) {
+	.creatives-qr-admin-layout {
+		gap: 20px;
+	}
+}
+
+.creatives-dqrcgp-credit {
+	margin: 28px 0 12px;
+	text-align: center;
+	color: #50575e;
+	font-size: 13px;
+}
+
+.creatives-dqrcgp-credit a {
+	text-decoration: none;
+}
+
+.button-primary {
+	background: #6c9ff9;
+	border-color: #6c9ff9;
+	color: #fff;
+	text-shadow: none;
+	box-shadow: none;
+}
+
+.button-primary:hover,
+.button-primary:focus {
+	background: #4a80f5;
+	border-color: #4a80f5;
+	color: #fff;
+}

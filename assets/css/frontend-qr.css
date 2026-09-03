@@ -1,0 +1,483 @@
+/**
+ * Creatives QR Generator - Frontend Styles
+ *
+ * Button colors and !important overrides below are intentional: the host
+ * theme's global link-color rule was overriding the plain .creatives-qr-*
+ * classes (dark navy text landing on dark backgrounds), and the theme's
+ * own button styles were overriding the submit button entirely. Every
+ * button rule is scoped under .creatives-qr-frontend-wrapper for extra
+ * specificity and carries !important on color/background/border so it
+ * renders consistently regardless of theme CSS load order.
+ *
+ * @package Creatives_Dual_QR_Code_Generator_Pro
+ */
+
+.creatives-qr-frontend-wrapper {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-form {
+	background: #f9f9f9;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	padding: 24px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-form-group {
+	margin-bottom: 20px;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-form-group label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: 600;
+	color: #333333;
+	font-size: 14px;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-form-group input {
+	width: 100%;
+	padding: 10px 12px;
+	font-size: 14px;
+	color: #222222;
+	background-color: #ffffff;
+	border: 1px solid #d0d0d0;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+	transition: border-color 0.2s;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-form-group input:focus {
+	outline: none;
+	border-color: #002470;
+	box-shadow: 0 0 0 2px rgba(0, 36, 112, 0.15);
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-form-group input::placeholder {
+	color: #999999;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-turnstile-wrapper {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-turnstile-wrapper .cf-turnstile {
+	margin: 0;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms {
+	margin-bottom: 20px;
+	font-size: 13px;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-heading {
+	margin: 0 0 4px 0;
+	font-size: 13px;
+	font-weight: 700;
+	color: #002470;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-lead {
+	margin: 0 0 8px 0;
+	font-size: 12px;
+	line-height: 1.5;
+	color: #555555;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-intro {
+	margin: 0 0 8px 0;
+	padding: 8px 12px;
+	font-size: 12px;
+	line-height: 1.5;
+	color: #333333;
+	background: #ffffff;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+}
+
+/* The opening text is site-editable, so it arrives as one or more
+   paragraphs inside the panel rather than as a single <p>. */
+.creatives-qr-frontend-wrapper .creatives-qr-terms-intro > :first-child {
+	margin-top: 0;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-intro > :last-child {
+	margin-bottom: 0;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-scroll > :first-child {
+	margin-top: 10px;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-details {
+	margin-bottom: 8px;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+	background: #ffffff;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-details summary {
+	padding: 8px 12px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #002470;
+	cursor: pointer;
+	list-style: none;
+	user-select: none;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-details summary::-webkit-details-marker {
+	display: none;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-details summary::before {
+	content: "▸ ";
+	font-size: 11px;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-details[open] summary::before {
+	content: "▾ ";
+}
+
+/* The full terms text is long, so the expanded panel scrolls within a
+   fixed height instead of pushing the rest of the page down. */
+.creatives-qr-frontend-wrapper .creatives-qr-terms-scroll {
+	max-height: 220px;
+	overflow-y: auto;
+	padding: 0 12px 12px 12px;
+	border-top: 1px solid #eeeeee;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-scroll p {
+	margin: 10px 0 0 0;
+	font-size: 12px;
+	line-height: 1.5;
+	color: #444444;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-scroll ul {
+	margin: 4px 0 0 0;
+	padding: 0 0 0 18px;
+	font-size: 12px;
+	line-height: 1.5;
+	color: #444444;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-scroll li {
+	margin-bottom: 4px;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-checkbox {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	font-size: 13px;
+	color: #333333;
+	cursor: pointer;
+	line-height: 1.4;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-checkbox input[type="checkbox"] {
+	margin-top: 2px;
+	width: 15px;
+	height: 15px;
+	flex-shrink: 0;
+	cursor: pointer;
+	accent-color: #002470;
+}
+
+/* Grayed out and unclickable until the visitor opens the full Terms of Use. */
+.creatives-qr-frontend-wrapper .creatives-qr-terms-checkbox input[type="checkbox"]:disabled {
+	cursor: not-allowed;
+	opacity: 0.4;
+	accent-color: #999999;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-terms-checkbox:has(input:disabled) {
+	cursor: not-allowed;
+	color: #999999;
+}
+
+/* Primary action — site brand navy (matches footer / body brand color) */
+.creatives-qr-frontend-wrapper .creatives-qr-submit-btn {
+	width: 100%;
+	padding: 12px 24px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #ffffff !important;
+	background-color: #002470 !important;
+	border: 2px solid #002470 !important;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s, border-color 0.2s, opacity 0.2s;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-submit-btn:hover {
+	background-color: #00174d !important;
+	border-color: #00174d !important;
+	color: #ffffff !important;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-submit-btn:active {
+	background-color: #000f36 !important;
+	border-color: #000f36 !important;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-submit-btn:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-error {
+	margin-top: 20px;
+	padding: 12px 16px;
+	background-color: #fce4e6;
+	border-left: 4px solid #d32f2f;
+	color: #c62828;
+	font-size: 14px;
+	border-radius: 4px;
+	line-height: 1.5;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-result {
+	margin-top: 30px;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-success {
+	background: #f9f9f9;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	padding: 24px;
+	text-align: center;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-success h3 {
+	margin: 0 0 12px 0;
+	font-size: 18px;
+	color: #002470;
+	font-weight: 600;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-url {
+	margin: 0 0 20px 0;
+	font-size: 13px;
+	color: #666666;
+	word-break: break-all;
+	background: #ffffff;
+	padding: 10px;
+	border-radius: 4px;
+	border: 1px solid #e0e0e0;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-url strong {
+	color: #222222;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-display {
+	margin: 24px 0;
+	display: flex;
+	justify-content: center;
+	background: #ffffff;
+	padding: 20px;
+	border-radius: 4px;
+	border: 1px solid #e0e0e0;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-image {
+	max-width: 300px;
+	width: 100%;
+	height: auto;
+	border: 1px solid #e0e0e0;
+	padding: 4px;
+	background: #ffffff;
+	border-radius: 4px;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-downloads {
+	display: flex;
+	gap: 12px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-download-btn {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #ffffff !important;
+	text-decoration: none;
+	border-radius: 4px;
+	transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
+	cursor: pointer;
+}
+
+/* PNG — brand accent orange (matches the site's existing CTA buttons) */
+.creatives-qr-frontend-wrapper .creatives-qr-download-png {
+	background-color: #c53b00 !important;
+	border: 2px solid #c53b00 !important;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-download-png:hover {
+	background-color: #a03000 !important;
+	border-color: #a03000 !important;
+	color: #ffffff !important;
+}
+
+/* SVG — brand navy, for visual pairing with the primary button */
+.creatives-qr-frontend-wrapper .creatives-qr-download-svg {
+	background-color: #002470 !important;
+	border: 2px solid #002470 !important;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-download-svg:hover {
+	background-color: #00174d !important;
+	border-color: #00174d !important;
+	color: #ffffff !important;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-download-btn:active {
+	transform: scale(0.98);
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-generate-another {
+	display: block;
+	margin: 20px auto 0 auto;
+	padding: 0;
+	background: none !important;
+	background-color: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	font-size: 13px;
+	font-weight: 600;
+	color: #002470 !important;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-generate-another:hover,
+.creatives-qr-frontend-wrapper .creatives-qr-generate-another:focus,
+.creatives-qr-frontend-wrapper .creatives-qr-generate-another:active {
+	background: none !important;
+	background-color: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	color: #00174d !important;
+}
+
+/* Responsive Design */
+@media ( max-width: 600px ) {
+	.creatives-qr-frontend-wrapper {
+		padding: 12px;
+	}
+
+	.creatives-qr-frontend-wrapper .creatives-qr-form {
+		padding: 16px;
+	}
+
+	.creatives-qr-frontend-wrapper .creatives-qr-downloads {
+		gap: 8px;
+	}
+
+	.creatives-qr-frontend-wrapper .creatives-qr-download-btn {
+		padding: 10px 16px;
+		font-size: 13px;
+		flex: 1;
+	}
+
+	.creatives-qr-frontend-wrapper .creatives-qr-image {
+		max-width: 250px;
+	}
+}
+
+/* ---------------------------------------------------------------------
+ * Optional centre-logo upload
+ * ------------------------------------------------------------------ */
+
+.creatives-qr-frontend-wrapper .creatives-qr-optional {
+	font-weight: 400;
+	color: #777777;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-logo-group input[type="file"] {
+	width: 100%;
+	padding: 10px 12px;
+	font-size: 13px;
+	color: #222222;
+	background-color: #ffffff;
+	border: 1px dashed #c8c8c8;
+	border-radius: 4px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-logo-group input[type="file"]:focus {
+	outline: none;
+	border-color: #002470;
+	box-shadow: 0 0 0 2px rgba(0, 36, 112, 0.15);
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-logo-hint {
+	margin: 8px 0 0 0;
+	font-size: 12px;
+	line-height: 1.5;
+	color: #666666;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-logo-preview {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-top: 12px;
+	padding: 10px;
+	background: #ffffff;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-logo-preview[hidden] {
+	display: none;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-logo-preview img {
+	width: 48px;
+	height: 48px;
+	object-fit: contain;
+	background: #ffffff;
+	border: 1px solid #eeeeee;
+	border-radius: 2px;
+	flex: 0 0 auto;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-logo-clear {
+	background: transparent !important;
+	color: #555555 !important;
+	border: 1px solid #d0d0d0 !important;
+	border-radius: 4px;
+	padding: 6px 12px;
+	font-size: 12px;
+	line-height: 1.2;
+	cursor: pointer;
+}
+
+.creatives-qr-frontend-wrapper .creatives-qr-logo-clear:hover {
+	background: #f2f2f2 !important;
+	color: #222222 !important;
+	border-color: #b8b8b8 !important;
+}
+
+/* Credit line at the foot of the generator. */
+.creatives-qr-frontend-wrapper .creatives-qr-credit {
+	margin: 28px 0 0;
+	text-align: center;
+	font-size: 0.875em;
+	line-height: 1.5;
+	opacity: 0.85;
+}
