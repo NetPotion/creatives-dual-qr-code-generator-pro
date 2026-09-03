@@ -4,7 +4,7 @@ Tags: qr-code, qr-generator, shortcode, cloudflare, turnstile, logo
 Requires at least: 5.2
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 3.0.0
+Stable tag: 3.0.1
 License: GPL-2.0+
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -152,6 +152,9 @@ will see an advisory notice suggesting you keep only the one you actually
 use, since running more than one just adds duplicate menu entries.
 
 == Changelog ==
+
+= 3.0.1 =
+* Nested QR Code Generator and Settings under the shared "Creatives Features" menu instead of a separate top-level entry.
 
 = 3.0.0 =
 * Split into its own plugin, distinct from Creatives QR Code Generator and

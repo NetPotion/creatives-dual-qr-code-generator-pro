@@ -3,7 +3,7 @@
  * Plugin Name: Creatives Dual QR Code Generator Pro
  * Plugin URI: https://midstatedesign.com/
  * Description: QR code generator for WordPress, front end and back end. Admin generator + frontend shortcode. Download codes as PNG or SVG, with an optional center logo. Includes Cloudflare Turnstile CAPTCHA on the public form.
- * Version: 3.0.0
+ * Version: 3.0.1
  * Author: MidState Design
  * Author URI: https://midstatedesign.com/
  * License: GPL-2.0+
@@ -24,7 +24,7 @@ if ( ! defined( 'CREATIVES_DQRCGP_FILE' ) ) {
 	define( 'CREATIVES_DQRCGP_FILE', __FILE__ );
 	define( 'CREATIVES_DQRCGP_DIR', plugin_dir_path( __FILE__ ) );
 	define( 'CREATIVES_DQRCGP_URL', plugin_dir_url( __FILE__ ) );
-	define( 'CREATIVES_DQRCGP_VERSION', '3.0.0' );
+	define( 'CREATIVES_DQRCGP_VERSION', '3.0.1' );
 }
 
 require_once CREATIVES_DQRCGP_DIR . 'includes/class-creatives-dqrcgp-logo.php';
@@ -1294,9 +1294,82 @@ if ( ! function_exists( 'creatives_dqrcgp_page_hooks' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'creatives_features_register_parent_menu' ) ) :
+	/**
+	 * Register the shared "Creatives Features" top-level menu, once.
+	 *
+	 * Runs at priority 5 — before the default priority-10 admin_menu hooks
+	 * most plugins (including this one) use to add their own screens — so
+	 * the parent exists by the time any plugin tries to nest under it,
+	 * regardless of plugin load order. Whichever Creatives plugin happens
+	 * to load first in a given install is the one that actually creates
+	 * the parent entry; every other plugin sees it already exists and
+	 * skips straight to adding its own submenu.
+	 *
+	 * @return void
+	 */
+	function creatives_features_register_parent_menu() {
+		if ( ! empty( $GLOBALS['admin_page_hooks']['creatives-features'] ) ) {
+			return; // Another active Creatives plugin already registered it.
+		}
+
+		add_menu_page(
+			__( 'Creatives Features', 'creatives-dual-qr-code-generator-pro' ),
+			__( 'Creatives Features', 'creatives-dual-qr-code-generator-pro' ),
+			'read',
+			'creatives-features',
+			'creatives_features_render_hub_page',
+			'dashicons-star-filled',
+			58
+		);
+
+		remove_submenu_page( 'creatives-features', 'creatives-features' );
+	}
+endif;
+add_action( 'admin_menu', 'creatives_features_register_parent_menu', 5 );
+
+if ( ! function_exists( 'creatives_features_render_hub_page' ) ) :
+	/**
+	 * Renders the shared "Creatives Features" landing page.
+	 *
+	 * Lists every active Creatives plugin's settings screen so clicking
+	 * the top-level menu link itself doesn't show a blank page.
+	 *
+	 * @return void
+	 */
+	function creatives_features_render_hub_page() {
+		global $submenu;
+		?>
+		<div class="wrap">
+			<h1><?php esc_html_e( 'Creatives Features', 'creatives-dual-qr-code-generator-pro' ); ?></h1>
+			<p><?php esc_html_e( 'Choose a plugin below to manage its settings.', 'creatives-dual-qr-code-generator-pro' ); ?></p>
+			<?php if ( ! empty( $submenu['creatives-features'] ) ) : ?>
+				<ul>
+					<?php foreach ( $submenu['creatives-features'] as $item ) : ?>
+						<?php
+						if ( ! current_user_can( $item[1] ) ) {
+							continue;
+						}
+						?>
+						<li>
+							<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . $item[2] ) ); ?>">
+								<?php echo esc_html( wp_strip_all_tags( $item[0] ) ); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			<?php else : ?>
+				<p><?php esc_html_e( 'No Creatives plugins are active yet.', 'creatives-dual-qr-code-generator-pro' ); ?></p>
+			<?php endif; ?>
+		</div>
+		<?php
+	}
+endif;
+
 if ( ! function_exists( 'creatives_dqrcgp_add_menu' ) ) :
 	/**
-	 * Add the top-level QR Generator menu with its two screens.
+	 * Nest this plugin's two screens under the shared "Creatives Features"
+	 * top-level menu.
 	 *
 	 * The generator is open to editors and up; settings stay locked to
 	 * administrators.
@@ -1306,32 +1379,19 @@ if ( ! function_exists( 'creatives_dqrcgp_add_menu' ) ) :
 	function creatives_dqrcgp_add_menu() {
 		$generate_cap = Creatives_DQRCGP_Admin_Tool::capability();
 
-		$generate_hook = add_menu_page(
+		$generate_hook = add_submenu_page(
+			'creatives-features',
 			__( 'QR Code Generator', 'creatives-dual-qr-code-generator-pro' ),
 			__( 'Dual QR Code Generator', 'creatives-dual-qr-code-generator-pro' ),
-			$generate_cap,
-			Creatives_DQRCGP_Admin_Tool::PAGE_SLUG,
-			array( 'Creatives_DQRCGP_Admin_Tool', 'render_page' ),
-			'dashicons-grid-view',
-			// Decimal position: sits just below Settings without fighting
-			// another plugin for an integer slot, which is how menu entries
-			// silently overwrite each other.
-			80.9
-		);
-
-		add_submenu_page(
-			Creatives_DQRCGP_Admin_Tool::PAGE_SLUG,
-			__( 'QR Code Generator', 'creatives-dual-qr-code-generator-pro' ),
-			__( 'Generate', 'creatives-dual-qr-code-generator-pro' ),
 			$generate_cap,
 			Creatives_DQRCGP_Admin_Tool::PAGE_SLUG,
 			array( 'Creatives_DQRCGP_Admin_Tool', 'render_page' )
 		);
 
 		$settings_hook = add_submenu_page(
-			Creatives_DQRCGP_Admin_Tool::PAGE_SLUG,
+			'creatives-features',
 			__( 'Creatives Dual QR Code Generator Pro', 'creatives-dual-qr-code-generator-pro' ),
-			__( 'Settings', 'creatives-dual-qr-code-generator-pro' ),
+			__( 'Dual QR Code Generator: Settings', 'creatives-dual-qr-code-generator-pro' ),
 			'manage_options',
 			'creatives-qr-pro',
 			'creatives_dqrcgp_settings_page'
