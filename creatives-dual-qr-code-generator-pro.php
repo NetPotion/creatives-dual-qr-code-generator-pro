@@ -3,7 +3,7 @@
  * Plugin Name: Creatives Dual QR Code Generator Pro
  * Plugin URI: https://midstatedesign.com/
  * Description: QR code generator for WordPress, front end and back end. Admin generator + frontend shortcode. Download codes as PNG or SVG, with an optional center logo. Includes Cloudflare Turnstile CAPTCHA on the public form.
- * Version: 3.0.1
+ * Version: 3.0.2
  * Author: MidState Design
  * Author URI: https://midstatedesign.com/
  * License: GPL-2.0+
@@ -24,7 +24,7 @@ if ( ! defined( 'CREATIVES_DQRCGP_FILE' ) ) {
 	define( 'CREATIVES_DQRCGP_FILE', __FILE__ );
 	define( 'CREATIVES_DQRCGP_DIR', plugin_dir_path( __FILE__ ) );
 	define( 'CREATIVES_DQRCGP_URL', plugin_dir_url( __FILE__ ) );
-	define( 'CREATIVES_DQRCGP_VERSION', '3.0.1' );
+	define( 'CREATIVES_DQRCGP_VERSION', '3.0.2' );
 }
 
 require_once CREATIVES_DQRCGP_DIR . 'includes/class-creatives-dqrcgp-logo.php';
@@ -1338,27 +1338,65 @@ if ( ! function_exists( 'creatives_features_render_hub_page' ) ) :
 	 * @return void
 	 */
 	function creatives_features_render_hub_page() {
-		global $submenu;
+		$cards = apply_filters( 'creatives_features_cards', array() );
+
+		usort(
+			$cards,
+			function ( $a, $b ) {
+				return strcasecmp( $a['title'], $b['title'] );
+			}
+		);
 		?>
-		<div class="wrap">
+		<div class="wrap creatives-features-hub">
 			<h1><?php esc_html_e( 'Creatives Features', 'creatives-dual-qr-code-generator-pro' ); ?></h1>
 			<p><?php esc_html_e( 'Choose a plugin below to manage its settings.', 'creatives-dual-qr-code-generator-pro' ); ?></p>
-			<?php if ( ! empty( $submenu['creatives-features'] ) ) : ?>
-				<ul>
-					<?php foreach ( $submenu['creatives-features'] as $item ) : ?>
-						<?php
-						if ( ! current_user_can( $item[1] ) ) {
-							continue;
+			<style>
+				.creatives-features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: 20px; }
+				.creatives-features-card { display: flex; flex-direction: column; align-items: flex-start; background: #fff; border: 1px solid #dcdcde; border-radius: 8px; padding: 20px; box-shadow: 0 1px 2px rgba(0, 0, 0, .04); }
+				.creatives-features-card .creatives-features-icon { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #6c9ff9, #4a80f5); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; flex-shrink: 0; }
+				.creatives-features-card .creatives-features-icon svg { width: 26px; height: 26px; }
+				.creatives-features-card h2 { margin: 0 0 6px; font-size: 15px; }
+				.creatives-features-card p { margin: 0 0 14px; color: #50575e; font-size: 13px; flex-grow: 1; }
+				.creatives-features-links { display: flex; flex-wrap: wrap; gap: 8px; }
+				.creatives-features-links .button-primary { background: #6c9ff9; border-color: #4a80f5; }
+				.creatives-features-links .button-primary:hover { background: #4a80f5; }
+			</style>
+			<?php
+			$rendered = 0;
+			?>
+			<div class="creatives-features-grid">
+				<?php foreach ( $cards as $card ) : ?>
+					<?php
+					$links = array_filter(
+						$card['links'],
+						function ( $link ) {
+							return empty( $link['capability'] ) || current_user_can( $link['capability'] );
 						}
-						?>
-						<li>
-							<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . $item[2] ) ); ?>">
-								<?php echo esc_html( wp_strip_all_tags( $item[0] ) ); ?>
-							</a>
-						</li>
-					<?php endforeach; ?>
-				</ul>
-			<?php else : ?>
+					);
+					if ( ! $links ) {
+						continue;
+					}
+					++$rendered;
+					?>
+					<div class="creatives-features-card">
+						<span class="creatives-features-icon">
+							<?php
+							echo $card['icon']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG markup defined in each plugin's own registration function, never user input.
+							?>
+						</span>
+						<h2><?php echo esc_html( $card['title'] ); ?></h2>
+						<p><?php echo esc_html( $card['description'] ); ?></p>
+						<div class="creatives-features-links">
+							<?php foreach ( $links as $link ) : ?>
+								<a class="button button-primary" href="<?php echo esc_url( admin_url( 'admin.php?page=' . $link['page'] ) ); ?>">
+									<?php echo esc_html( $link['label'] ); ?>
+								</a>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</div>
+			<?php if ( ! $rendered ) : ?>
 				<p><?php esc_html_e( 'No Creatives plugins are active yet.', 'creatives-dual-qr-code-generator-pro' ); ?></p>
 			<?php endif; ?>
 		</div>
@@ -1405,6 +1443,38 @@ if ( ! function_exists( 'creatives_dqrcgp_add_menu' ) ) :
 		);
 	}
 endif;
+
+if ( ! function_exists( 'creatives_dqrcgp_register_features_card' ) ) :
+	/**
+	 * Contribute this plugin's card to the "Creatives Features" hub page.
+	 *
+	 * @param array $cards Cards registered so far.
+	 * @return array
+	 */
+	function creatives_dqrcgp_register_features_card( $cards ) {
+		$generate_cap = Creatives_DQRCGP_Admin_Tool::capability();
+
+		$cards[] = array(
+			'title'       => __( 'Dual QR Code Generator Pro', 'creatives-dual-qr-code-generator-pro' ),
+			'description' => __( 'Front-end and back-end QR code generator with an optional logo, PNG/SVG downloads, and Turnstile protection.', 'creatives-dual-qr-code-generator-pro' ),
+			'icon'        => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/><rect x="14" y="18" width="3" height="3"/><rect x="18" y="14" width="3" height="3"/></svg>',
+			'links'       => array(
+				array(
+					'label'      => __( 'Generate', 'creatives-dual-qr-code-generator-pro' ),
+					'page'       => Creatives_DQRCGP_Admin_Tool::PAGE_SLUG,
+					'capability' => $generate_cap,
+				),
+				array(
+					'label'      => __( 'Settings', 'creatives-dual-qr-code-generator-pro' ),
+					'page'       => 'creatives-qr-pro',
+					'capability' => 'manage_options',
+				),
+			),
+		);
+		return $cards;
+	}
+endif;
+add_filter( 'creatives_features_cards', 'creatives_dqrcgp_register_features_card' );
 
 if ( ! function_exists( 'creatives_dqrcgp_settings_page' ) ) :
 	/**
